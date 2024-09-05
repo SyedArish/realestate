@@ -2,7 +2,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import dotenv from 'dotenv';
 import multer from 'multer';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { initializeFirebaseApp } from './firebase.js';
@@ -13,7 +12,6 @@ import { getAllListings } from './public/src/dbretrive.js';
 import path from 'path';
 import { getAllMessage } from './public/src/dbmesage.js';
 
-dotenv.config();
 initializeFirebaseApp();
 
 const dirname_ = dirname(fileURLToPath(import.meta.url));
@@ -149,4 +147,5 @@ app.get('/Delete-Listing', (req, res) => {
 });
 
 // For Vercel Deployment - Export the app
+app.listen(port, () => console.log("Server ready on port 3000."));
 export default app;
