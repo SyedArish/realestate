@@ -14,11 +14,13 @@ import { getAllMessage } from './public/src/dbmesage.js';
 
 initializeFirebaseApp();
 
-const dirname_ = dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 4000;
 
 // app.use(express.static(path.join(dirname_, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(path.join(dirname_, 'src')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
@@ -28,12 +30,12 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 // Home Page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(dirname_, 'public/home.html'));
+  res.sendFile(path.join(__dirname, 'public/home.html'));
 });
 
 // Add Listing - GET and POST
 app.get('/add-listing', (req, res) => {
-  res.sendFile(path.join(dirname_, 'public/Admin-dash/add-listing.html'));
+  res.sendFile(path.join(__dirname, 'public/Admin-dash/add-listing.html'));
 });
 
 app.post('/add-listing', upload.array('images', 10), async (req, res) => {
@@ -72,11 +74,11 @@ app.post('/add-listing', upload.array('images', 10), async (req, res) => {
 
 // Contact and Messages
 app.get('/contact-us', (req, res) => {
-  res.sendFile(path.join(dirname_, 'public/messages.html'));
+  res.sendFile(path.join(__dirname, 'public/messages.html'));
 });
 
 app.get('/Messages', (req, res) => {
-  res.sendFile(path.join(dirname_, 'public/Admin-dash/messages.html'));
+  res.sendFile(path.join(__dirname, 'public/Admin-dash/messages.html'));
 });
 
 app.post('/Messages', (req, res) => {
@@ -107,7 +109,7 @@ app.get('/api/message', async (req, res) => {
 
 // All Listings - GET and API
 app.get('/all-Listing', (req, res) => {
-  res.sendFile(path.join(dirname_, 'public/listing.html'));
+  res.sendFile(path.join(__dirname, 'public/listing.html'));
 });
 
 app.get('/api/listings', async (req, res) => {
@@ -122,7 +124,7 @@ app.get('/api/listings', async (req, res) => {
 
 // Listing Detail - GET and API
 app.get('/listings/:id', (req, res) => {
-  res.sendFile(path.join(dirname_, 'public/listing2.html'));
+  res.sendFile(path.join(__dirname, 'public/listing2.html'));
 });
 
 app.get('/api/listings/:id', async (req, res) => {
@@ -143,7 +145,7 @@ app.get('/api/listings/:id', async (req, res) => {
 
 // Delete Listing
 app.get('/Delete-Listing', (req, res) => {
-  res.sendFile(path.join(dirname_, 'public/Admin-dash/delet-listing.html'));
+  res.sendFile(path.join(__dirname, 'public/Admin-dash/delet-listing.html'));
 });
 
 // For Vercel Deployment - Export the app
