@@ -6,3 +6,4 @@ node_modules/
 
 # Ignore firebase.js (contains sensitive information)
 firebase.js
+.vercel
