@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>adding-listing</title>
+        <meta content="adding-listing" property="og:title"/>
+        <meta content="adding-listing" property="twitter:title"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <link href="https://cdn.prod.website-files.com/6688eebd40456e66e91ce62d/css/full-real-estate-924b10.webflow.6a269a4d4.css" rel="stylesheet" type="text/css"/>
+  <style>
+    .image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.image-preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+  </style>  
+    </head>
+    <body class="body-2">
+        <section class="section">
+            <img src="https://cdn.prod.website-files.com/6688eebd40456e66e91ce62d/66cf77ecda5743ad79539860_dribbble-white.svg" loading="lazy" width="50" alt="" class="image"/>
+            <div class="div-block">
+                <a href="/add-listing" class="button w-button">Add New Listing</a>
+                <a href="/messages" class="button w-button">Messages</a>
+                <a href="/all-listing" class="button w-button">All Listing</a>
+                <a href="/delete-listing" class="button w-button">Delete Listing</a>
+            </div>
+        </section>
+        <div class="w-layout-blockcontainer container-4 w-container">
+            <div class="ms-form-block adding-listing w-form">
+                <h1 class="heading">Add New Lsiting</h1>
+                <form id="wf-form-Onboarding" method="post" name="wf-form-Onboarding" enctype="multipart/form-data" data-name="Onboarding" action="/add-listing" class="ms-form ms-is-contact-form" data-wf-page-id="66cf6ed1ca88a96748d67d09" data-wf-element-id="83c8ad9b-ed4b-7f6a-d677-74ff9c84e8e6">
+                    <div class="ms-space ms-is-20"></div>
+                    <!-- uploading images -->
+                    <div class="ms-form-row2 form-3">
+                        <div class="ms-full-width">
+                            <label for="Your-Images" class="ms-input-label">Upload Images</label>
+                            <input type="file" id="Your-Images" name="images" accept="image/*" multiple required class="ms-input w-input">
+                        </div>
+                    </div>
+                    
+                    <!-- Image Preview Section -->
+                    <div id="image-preview" class="image-preview"></div>
+                
+                    <div class="ms-form-row2 form-1">
+                        <div class="ms-full-width">
+                            <label for="Your-Name" class="ms-input-label">House Name</label>
+                            <input class="ms-input w-input" maxlength="256" name="HouseName" data-name="Your Name" placeholder="e.g. Yoke house" type="text" id="Your-Name" data-ms-member="PLACEHOLDER"/>
+                        </div>
+                        <div class="ms-full-width">
+                            <label for="Your-Email-2" class="ms-input-label">Address</label>
+                            <input class="ms-input w-input" maxlength="256" name="houseaddress" data-name="Your Email" placeholder=" eg - Robert Robertson, 1234 NW Bobcat Lane," type="text" id="Your-Email-2" data-ms-member="PLACEHOLDER"/>
+                        </div>
+                    </div>
+                    <div class="ms-form-row2 ms-form2">
+                        <div class="ms-full-width">
+                            <label for="Your-Name-2" class="ms-input-label">Bedroom</label>
+                            <input class="ms-input w-input" maxlength="256" name="bedroom" data-name="Your Name 2" placeholder="e.g. 1-10" type="number" id="Your-Name-2" data-ms-member="PLACEHOLDER"/>
+                        </div>
+                        <div class="ms-full-width">
+                            <label for="Your-Email-3" class="ms-input-label">Bathroom</label>
+                            <input class="ms-input w-input" maxlength="256" name="Bathroom" data-name="Your Email 3" placeholder="e.g 1-10" type="number" id="Your-Email-3" data-ms-member="PLACEHOLDER"/>
+                        </div>
+                    </div>
+                    <div class="ms-form-row2 form-3">
+                        <div class="ms-full-width">
+                            <label for="Your-Name-3" class="ms-input-label">Square Feet</label>
+                            <input class="ms-input w-input" maxlength="256" name="squarefeet" data-name="Your Name 2" placeholder="e.g. 1500" type="number" id="Your-Name-2" data-ms-member="PLACEHOLDER"/>
+                        </div>
+                        <div class="ms-full-width house-id">
+                            <label for="Your-Email-4" class="ms-input-label">House Id</label>
+                            <input class="ms-input w-input" maxlength="256" name="houseid" data-name="Your Email 3" placeholder="e.g. mark-house-1" type="text" id="Your-Email-3" data-ms-member="PLACEHOLDER"/>
+                        </div>
+                    </div>
+                    <div class="about-house">
+                        <label for="Your-Message" class="ms-input-label">About House</label>
+                        <textarea id="Your-Message" name="aboutHouse" maxlength="5000" data-name="Your Message" placeholder="Write About the house something you like or specail" class="ms-input ms-is-text-area ms-is-bigger w-input"></textarea>
+                    </div>
+                    <div class="unique-feature">
+                        <label for="Input-with-Description" class="ms-input-label">Unique Feature</label>
+                        <div class="ms-form-row2 form-3">
+                            <div class="ms-full-width">
+                                <input class="ms-input w-input" maxlength="256" name="Feature1" data-name="Your Name 2" placeholder="e.g. furnished" type="text" id="Your-Name-2" data-ms-member="PLACEHOLDER"/>
+                            </div>
+                            <div class="ms-full-width">
+                                <input class="ms-input w-input" maxlength="256" name="Feature2" data-name="Your Email 3" placeholder="e.g. Indoor courtyards" type="text" id="Your-Email-3" data-ms-member="PLACEHOLDER"/>
+                            </div>
+                        </div>
+                        <div class="ms-form-row2 form-3">
+                            <div class="ms-full-width">
+                                <input class="ms-input w-input" maxlength="256" name="Feature3" data-name="Your Name 2" placeholder="e.g. Balcony" type="text" id="Your-Name-2" data-ms-member="PLACEHOLDER"/>
+                            </div>
+                            <div class="ms-full-width">
+                                <input class="ms-input w-input" maxlength="256" name="Feature4" data-name="Your Email 3" placeholder="e.g. Outdoor rooms." type="text" id="Your-Email-3" data-ms-member="PLACEHOLDER"/>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="unique-feature">
+                        <label for="Input-with-Description" class="ms-input-label propertie-infro">Property Information</label>
+                        <div class="ms-form-row2 form-3">
+                            <div class="ms-full-width">
+                                <input class="ms-input w-input" maxlength="256" name="propertieinfo1" data-name="Your Name 2" placeholder="e.g. when its build " type="text" id="Your-Name-2" data-ms-member="PLACEHOLDER"/>
+                            </div>
+                            <div class="ms-full-width">
+                                <input class="ms-input w-input" maxlength="256" name="propertieinfo2" data-name="Your Email 3" placeholder="e.g. 3 Floors" type="text" id="Your-Email-3" data-ms-member="PLACEHOLDER"/>
+                            </div>
+                        </div>
+                        <div class="ms-form-row2 form-3">
+                            <div class="ms-full-width">
+                                <input class="ms-input w-input" maxlength="256" name="propertieinfo3" data-name="Your Name 2" placeholder="e.g. 1,2 owner  " type="number" id="Your-Name-2" data-ms-member="PLACEHOLDER"/>
+                            </div>
+                            <div class="ms-full-width">
+                                <input class="ms-input w-input" maxlength="256" name="propertieinfo4" data-name="Your Email 3" placeholder="e.g. location in map" type="bolean" id="Your-Email-3" data-ms-member="PLACEHOLDER"/>
+                            </div>
+                        </div>
+                        <label for="Input-with-Description" class="ms-input-label propertie-infro">Add Youtube Url</label>
+                        <input class="ms-input w-input" maxlength="256" name="youtubeurl" data-name="Your Email 3" placeholder="e.g https://www.youtube.com/yourvideo " type="text" id="Your-Email-3" data-ms-member="PLACEHOLDER"/>
+                    
+                        <label for="Input-with-Description" class="ms-input-label propertie-infro">Property Price</label>
+                        <input class="ms-input w-input" maxlength="256" name="Price" data-name="Your Email 3" placeholder="e.g.20,0000 Rs " type="text" id="Your-Email-3" data-ms-member="PLACEHOLDER"/>
+                    </div>
+                    <input type="submit" data-wait="Please wait..." class="ms-button ms-is-form w-button" value="Upload"/>
+                </form>
+                
+                <div class="w-form-done">
+                    <div>Thank you! Your submission has been received!</div>
+                </div>
+                <div class="w-form-fail">
+                    <div>Oops! Something went wrong while submitting the form.</div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('Your-Images').addEventListener('change', function(event) {
+    const previewContainer = document.getElementById('image-preview');
+    previewContainer.innerHTML = ''; // Clear previous previews
+    
+    const files = event.target.files;
+
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const imgElement = document.createElement('img');
+            imgElement.src = e.target.result;
+            previewContainer.appendChild(imgElement);
+        }
+
+        reader.readAsDataURL(file);
+    }
+});
+        </script>
+    </body>
+</html>
