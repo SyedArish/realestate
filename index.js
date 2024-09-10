@@ -5,8 +5,6 @@ import { fileURLToPath } from 'url';
 import multer from 'multer';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { initializeFirebaseApp } from './firebase.js';
-import { firestoredb } from './firebase.js';
-import { collection, getDoc, addDoc, setDoc, doc } from 'firebase/firestore';
 import { addDocument } from './public/src/dbadd.js';
 import { getAllListings } from './public/src/dbretrive.js';
 import path from 'path';
@@ -19,9 +17,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 4000;
 
-// app.use(express.static(path.join(dirname_, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static(path.join(dirname_, 'src')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -34,7 +30,7 @@ app.get('/', (req, res) => {
 });
 
 // Add Listing - GET and POST
-app.get('/add-listing', (req, res) => {
+app.use('/add-listing', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/Admin-dash/add-listing.html'));
 });
 
@@ -148,6 +144,10 @@ app.get('/Delete-Listing', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/Admin-dash/delet-listing.html'));
 });
 
+
+app.get('*', (req, res) => {
+  res.status(404).send('Page not found');
+});
 // For Vercel Deployment - Export the app
 app.listen(port, () => console.log("Server ready on port 3000."));
 export default app;
