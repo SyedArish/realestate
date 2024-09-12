@@ -12,11 +12,39 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/",
       "dest": "/index.js"
     },
     {
       "src": "/add-listing",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/contact-us",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/Messages",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/api/message",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/all-Listing",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/api/listings",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/listings/(.*)",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/Delete-Listing",
       "dest": "/index.js"
     },
     {
