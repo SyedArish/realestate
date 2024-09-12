@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 
 // Add Listing - GET and POST
 app.get('/add-listing', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/add-listing.html'));
+  res.sendFile(path.join(__dirname, 'public/Admin-dash/add-listing.html'));
 });
 
 app.post('/add-listing', upload.array('images', 10), async (req, res) => {

@@ -16,6 +16,10 @@
       "dest": "/index.js"
     },
     {
+      "src": "/add-listing",
+      "dest": "/index.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/public/$1"
     }
