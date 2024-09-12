@@ -40,6 +40,10 @@
       "dest": "/index.js"
     },
     {
+      "src": "/api/listings/(.*)",
+      "dest": "/index.js"
+    },
+    {
       "src": "/listings/(.*)",
       "dest": "/index.js"
     },
